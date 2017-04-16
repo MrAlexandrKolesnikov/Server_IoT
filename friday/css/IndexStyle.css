@@ -1,0 +1,29 @@
+body {
+  padding-top: 50px;
+  min-height: 1px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.botWindow{
+  height: 80%;
+  width: 60%;
+  margin-left: 20%;
+}
+
+#monitor{
+  position: absolute;
+  overflow: auto;
+  margin-top: 2%;
+  height: 75%;
+  width: 60%;
+}
+#userConsoleText{
+	position: absolute;
+	width: 60%;
+	top:90%;
+
+}
+

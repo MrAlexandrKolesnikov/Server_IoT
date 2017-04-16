@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Remote control</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="wifi_power/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="wifi_power/js/remout.js"></script>
+    <link href="wifi_power/css/cover.css" rel="stylesheet">
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+          $("#option1").click(function()
+          {
+              console.log("clike ledOff");
+              sendStatus(0);
+              $(".site-wrapper").animate({ backgroundColor: "#333333"}, 1000);
+              $("body").animate({ color: "#FFFFFF"}, 1000);
+          });
+          $("#option2").click(function()
+          {
+                console.log("clike ledOn");
+                sendStatus(1);
+                $(".site-wrapper").animate({ backgroundColor: "#FFFFFF"}, 1000);
+                $("body").animate({ color: "#333333"}, 1000);
+          });
+        });
+    </script>
+  </head>
+
+  <body onload="onStart()">
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <nav class="nav nav-masthead">
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                  <button type="button" class="masthead-brand btn btn-outline-danger" onclick="window.location.href='/'">Home</button>
+                  <button type="button" class="masthead-brand btn btn-outline-danger" onclick="window.location.href='http://dev.truxan.by/ru/'">Contac</button>
+                  </div>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <h1 class="cover-heading">Страница управления электропитанием</h1>
+            <p class="lead">Просто жмите кнопочки и наслаждайтесь =)</p>
+            <p class="lead">
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-outline-danger">
+                <input type="radio" name="options" id="option1"  checked> Led Off
+              </label>
+              <label class="btn btn-outline-danger">
+                <input type="radio" name="options" id="option2" > Led On
+              </label>
+            </div>
+            </p>
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
