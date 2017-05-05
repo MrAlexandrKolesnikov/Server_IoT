@@ -251,3 +251,12 @@ var SendPrintToServer = function (text) {
     }
 }
 
+
+$(document).keypress(function(e) {
+    if(e.which == 13)
+    {
+        var text = $('#userConsoleText').val();
+        $('#txt_name').val(" ");
+        SendPrintToServer(text);
+    }
+});
