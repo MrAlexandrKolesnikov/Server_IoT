@@ -27,6 +27,7 @@ function start( route , handle )
     //http.createServer( onRequest ).listen(process.env.PORT);FOR DEPLOY
     //var server = http.createServer( onRequest ).listen(8888); //FOR LOCAL
     var server = http.createServer(onRequest).listen(process.env.PORT || 8888);
+    
     console.log( "Start Server" );
     io = io.listen(server);
     console.log( "Soket start" );

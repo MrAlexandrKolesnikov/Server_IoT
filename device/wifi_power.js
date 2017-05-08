@@ -2,26 +2,26 @@
  * Created by sasha on 08/04/2017.
  */
 
-var status = 0;
-var io;
+var _device = require("./device.js").prototype, method = wifi_power.prototype = Object.create(_device);
 
-function inConnect( i )
+
+method.constructor = wifi_power;
+
+function wifi_power( soket , id )
 {
-    console.log("Connect device");
-    io = i;
+    var status;
+    _device().constructor.apply(this,[soket,id])
 }
 
-function setStatus( i )
+method.setStatus = function( i )
 {
-    status = i;
-    console.log("Set wifi_power " + status);
-    io.emit('news', { led: status });
+    this.status = i;
+    console.log("Set devece #" + _device.getId.call(this)+" status:" + status);
+    io.emit('news', i);
 }
 
-function getStatus() {
-    return status;
+method.getStatus = function()
+{
+    return this.status;
 }
 
-exports.inConnect = inConnect;
-exports.setStatus = setStatus;
-exports.getStatus = getStatus;
