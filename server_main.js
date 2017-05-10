@@ -31,12 +31,14 @@ function start( route , handle )
     //http.createServer( onRequest ).listen(process.env.PORT);FOR DEPLOY
     //var server = http.createServer( onRequest ).listen(8888); //FOR LOCAL
 
-    var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+   /* var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
     var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 
     var server = http.createServer(onRequest).listen(server_port, server_ip_address, function () {
         console.log( "Listening on " + server_ip_address + ", port " + server_port )
-    });
+    });*/
+    var server = http.createServer(onRequest).listen(process.env.PORT || 8888);
+    console.log( "Start Server" );
 
     io = io.listen(server);
     console.log( "Soket start" );
