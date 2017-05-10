@@ -8,8 +8,9 @@
 var querystring = require("querystring");
 var bot = require("./bot/bot.js").getAnswer;
 var io = require("socket.io");
-var getStatus = require("./device/wifi_power.js").getStatus;
-var setStatus = require("./device/wifi_power.js").setStatus;
+var getStatus = require("./device/list_wifiPower").getStatus;
+var setStatus = require("./device/list_wifiPower").setStatus;
+var getIdList = require("./device/list_wifiPower").getIdList;
 
 var respond = "";
 var device = "";
@@ -101,12 +102,20 @@ function remote(response , postDate)
     console.log(postDate);
     if( postDate.indexOf( "getStatus" ) != -1)
     {
-        response.write( getStatus().toString() );
+        var status = getStatus(parseInt(postDate.split("&")[1]))
+        console.log(status);
+        response.write( String(status) );
+        response.end();
+    }
+    else if(postDate.indexOf( "getIdList" ) != -1)
+    {
+        response.write( String(getIdList()) );
         response.end();
     }
     else if( postDate.indexOf( "setStatus" ) != -1)
     {
-        setStatus(postDate.split( "***" )[1]);
+        console.log(parseInt(postDate.split("&")[2]) + 1)
+        setStatus(postDate.split("&")[1] , postDate.split("&")[2]);
     }
     else
     {

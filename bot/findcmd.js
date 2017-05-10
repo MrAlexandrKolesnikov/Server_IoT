@@ -6,7 +6,7 @@
 var CreateTxtFileByName = require("./WorkWithFile.js").CreateTxtFileByName; //func for worck with txt file
 var WriteTxtFile = require("./WorkWithFile.js").WriteTxtFile; //func for write text in txt file
 var CheckDevice = require("./CheckDevice.js").checkDevice; //func for check divice and cmd
-var SetDeviceStatus = require("../device/wifi_power.js").setStatus;
+var SetDeviceStatus = require("../device/wifiPower.js").setStatus;
 //var mysql = require('mysql'); //for mysql database
 //var PythonShell = require('python-shell'); //for run python shell
 

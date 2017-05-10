@@ -4,10 +4,10 @@
 
 var method = device.prototype;
 
-function device(soket,id)
+function device(socket,id)
 {
     this._id = id;
-    this._soket = soket;
+    this._socket = socket;
     console.log("Device Connect!");
 }
 method.getId = function()
@@ -15,9 +15,9 @@ method.getId = function()
     return this._id;
 }
 
-this.getSoket = function()
+method.getSocket = function()
 {
-    return this.soket;
+    return this.socket;
 }
 
-exports.device = device;
+module.exports = device;
