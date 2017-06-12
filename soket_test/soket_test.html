@@ -7,7 +7,7 @@
     <script>
         function send()
         {
-            var socket = io.connect('http://localhost:8080');
+            var socket = io.connect('stark-headland-63769.herokuapp.com');
             socket.on('news', function (data) {
                 console.log(data);
             });

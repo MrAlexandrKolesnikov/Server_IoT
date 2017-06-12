@@ -51,6 +51,11 @@ function start( route , handle )
             console.log("call remove");
             remove_wifiPower(client);
         });
+
+        client.onmessage = function(event)
+        {
+            alert("Получены данные " + event.data);
+        };
     });
 }
 
