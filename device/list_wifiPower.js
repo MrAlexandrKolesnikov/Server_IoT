@@ -25,7 +25,6 @@ exports.remove = function (socket)
     {
        if(list_wifiPower[index].getSocket() == undefined)
        {
-           console.log("Disconnect device #" + list_wifiPower[index].getId());
            delete list_wifiPower[list_wifiPower[index].getId()];
        }
     }
