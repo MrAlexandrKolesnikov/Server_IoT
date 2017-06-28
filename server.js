@@ -15,6 +15,7 @@ handle["/friday"] = requestHandlers.friday;
 handle["error"] = requestHandlers.error;
 handle["/remote"] = requestHandlers.remote;
 handle["file"] = requestHandlers.file;
+handle["/start_page"] = requestHandlers.start_page;
 
 //!!!!!
 handle["/soket"] = requestHandlers.soket;

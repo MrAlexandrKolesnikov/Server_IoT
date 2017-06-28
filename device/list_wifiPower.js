@@ -23,7 +23,7 @@ exports.remove = function (socket)
 {
     for(var index in list_wifiPower)
     {
-       if(list_wifiPower[index].getSocket() == socket)
+       if(list_wifiPower[index].getSocket() == undefined)
        {
            console.log("Disconnect device #" + list_wifiPower[index].getId());
            delete list_wifiPower[list_wifiPower[index].getId()];
@@ -49,4 +49,14 @@ exports.getIdList = function()
         idList.push(list_wifiPower[index].getId());
     }
     return idList;
+}
+
+exports.getNumberOfDevice = function () {
+    var count = 0;
+    for(var prs in list_wifiPower)
+    {
+        if(list_wifiPower.hasOwnProperty(prs)) count++;
+    }
+    console.log("Number Of Device:" + count);
+    return list_wifiPower.length;
 }

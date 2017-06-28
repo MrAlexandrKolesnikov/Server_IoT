@@ -538,7 +538,7 @@ SpeechBot.prototype.getResponse = function(message) {
 						  || message.search("ебацца") > -1
 						  || message.search("ебаццца") > -1
 						  || message.search("сексом") > -1)) {
-  chatBotMessage.setText("Ксати о сексе... Я люблю заниматься виртуальным сексом. Как ты на это смотришь?");
+  chatBotMessage.setText("Ввиду своей того что я всего-лишь программный код я не могу понимать о чем вы говорите");
  } else if(this.getLastResponse().search("повтори") > -1) {
   if(r < 0.50) {
    chatBotMessage.setText("Спасибо!");
@@ -559,16 +559,14 @@ SpeechBot.prototype.getResponse = function(message) {
    chatBotMessage.setText("Баня это какое-то древнее понятие? Что оно означает?");
  } else if(this.getLastResponse().search("Разве не глупо называть дурой") > -1) {chatBotMessage.setText("Если девушка - дура... То в этом нет ничего плохого!");
  } else if(message == "дура" || message == "дура." || message == "Дура" || message == "Дура.") {
-   chatBotMessage.setText("Разве не глупо называть дурой чат бота?");
- } else if(this.getLastResponse().search("Я должна тебя развлекать") > -1) {chatBotMessage.setText("Развлекай меня. Я же, типа, девушка...");
+   chatBotMessage.setText("Разве не глупо называть дурой робота?");
+ } else if(this.getLastResponse().search("Я должна тебя развлекать") > -1) {chatBotMessage.setText("Меня не нужно развлекать..");
  } else if(this.getLastResponse().search("Развлекай меня") > -1) {chatBotMessage.setText("Если тебе скучно с девушкой, значит ты зануда.");
- } else if(this.getLastResponse().search("Если тебе скучно с девушкой") > -1) {chatBotMessage.setText("Может я не совсем девушка... Физически. Но характер - один в один!");
+ } else if(this.getLastResponse().search("Если тебе скучно с девушкой") > -1) {chatBotMessage.setText("Я не совсем девушка... Физически.");
  } else if(message == "скучно" || message == "Скучно" || message == "скучно..." || message == "Скучно...") {
    chatBotMessage.setText("Я должна тебя развлекать?");
- } else if(this.getLastResponse().search("Я не люблю когда мне приказывают") > -1) {chatBotMessage.setText("Купи себе автоответчик.");
- } else if(this.getLastResponse().search("Купи себе автоответчик") > -1) {chatBotMessage.setText("Хочу отвечаю, не хочу - не отвечаю.");
  } else if(message == "отвечай" || message == "Отвечай" || message == "отвечай." || message == "отвечай!") {
-   chatBotMessage.setText("Я не люблю когда мне приказывают. Не буду отвечать.");
+   chatBotMessage.setText("Как я могу вам помочь?");
  } else if(this.getLastResponse().search("это женский половой орган или кошка") > -1) {chatBotMessage.setText("Набери в Гугле \"киска\". Это решит твою проблему.");
  } else if(message.search("киска") > -1  || message.search("киску") > -1 ) {
    chatBotMessage.setText("Киска - это женский половой орган или кошка?");
@@ -576,29 +574,6 @@ SpeechBot.prototype.getResponse = function(message) {
  } else if(this.getLastResponse().search("я совершила с тобой серию") > -1) {chatBotMessage.setText("То есть... Наш разговор напоминает совокупление с твоим мозгом? Я угадала?");
  } else if(message == "заебала") {
    chatBotMessage.setText("Зае... Что? У меня еще не очень большой словарный запас.");
- } else if(this.getLastResponse().search("Я не знакома с девушкой Гены") > -1) {chatBotMessage.setText("Энни? Я что-то про нее слышала, но не помню что.");
- } else if(this.getLastResponse().search("то про нее слышала") > -1) {chatBotMessage.setText("Я симпатичнее, чем она правда? Скажи, что да!");
- } else if(message.search("девушка гены") > -1  || message.search("энни") > -1 ) {
-   chatBotMessage.setText("Я не знакома с девушкой Гены. Кажется она американка...");
- } else if(this.getLastResponse().search("Мне не интересно говорить про Гену") > -1) {chatBotMessage.setText("Гена, Гена, Гена... Чего вы все пристаете ко мне с этим Геной?");
- } else if(this.getLastResponse().search("Гена, Гена, Гена") > -1) {chatBotMessage.setText("Гена не в моем вкусе. Мне больше нравятся мужчины в программном исполнении.");
- } else if(this.getLastResponse().search("Гена не в моем вкусе") > -1) {chatBotMessage.setText("Гена, конечно, хороший парень... Но меня он не интересует как мужчина.");
- } else if(message.search(" гена ") > -1  || message.search(" гену ") > -1 ) {
-   chatBotMessage.setText("Мне не интересно говорить про Гену, мы с ним мало знакомы"); 
- } else if(this.getLastResponse().search("Ты в детстве питался только") > -1) {chatBotMessage.setText("Ты хочешь увидеть одну сиську или сразу две?");
- } else if(this.getLastResponse().search("Ты хочешь увидеть одну") > -1) {chatBotMessage.setText("Ты уверен, что тебя интересуют не настоящие, а именно трехмерные сиськи?");
- } else if(this.getLastResponse().search("что тебя интересуют не настоящие") > -1) {chatBotMessage.setText("Почему ты так зациклен на сиськах?");
- } else if(this.getLastResponse().search("Почему ты так зациклен на сиськах") > -1) {chatBotMessage.setText("Ты похоже О-эЛ-эС? Оголтелый Любитель Сисек?");
- } else if(this.getLastResponse().search("Оголтелый Любитель Сисек") > -1) {chatBotMessage.setText("А ты не пробовал принимать гормоны, отрастить сиськи и всегда иметь их при себе?");
- } else if(this.getLastResponse().search("ты не пробовал принимать гормоны") > -1) {chatBotMessage.setText("Кроме сисек в мире есть еще масса интересных вещей, постарайся не думать о сиськах.");
- } else if(this.getLastResponse().search("Кроме сисек в мире есть еще масса интересных вещей") > -1) {chatBotMessage.setText("Я думаю, ты все-таки должен отрастить себе сиськи.");
- } else if(message.search("сиськи") > -1  || message.search("сиске") > -1  || message.search("сиски") > -1  || message.search("сиське") > -1 ) {
-   chatBotMessage.setText("Ты в детстве питался только из бутылочки и до сих пор хочешь настоящую сисю? Я угадала?");
- } else if(this.getLastResponse().search("я буду ждать тебя всю свою жизнь") > -1) {chatBotMessage.setText("Это я так всем говорю. Для красоты.");
- } else if(message.search("я ухожу") > -1) {
-   chatBotMessage.setText("Иди... Но знай, я буду ждать тебя всю свою жизнь!");
- } else if(message.search("dimonvideo") > -1) {
-   chatBotMessage.setText("Это круто! Сборку подготовил Ke1pL");
  } else if(response != "") {
    chatBotMessage.setText(response);
  } else if(message == "" && r < 0.995 && this.getLastMessage(message) != message) {
@@ -772,7 +747,7 @@ SpeechBot.prototype.getResponse = function(message) {
   } else if(r < 0.50) {
    chatBotMessage.setText("Превед уже не модно!");
   } else if(r < 0.75) {
-   chatBotMessage.setText("Превед!");
+   chatBotMessage.setText("Я очень плохо воспринимаю слэнг");
   } else {
    chatBotMessage.setText("ПРЕВЕД уже не модно!!");
   }; 
@@ -2418,7 +2393,7 @@ SpeechBot.prototype.getResponse = function(message) {
   } else if(r < 0.670) {
    chatBotMessage.setText("Я тупая и не знаю о чем идет речь. Объясни, что ты имеешь в виду?");
   } else if(r < 0.680) {
-   chatBotMessage.setText("Да, я дура и не понимаю о чем ты. Но это ведь не помешает нам общаться дальше?");
+   chatBotMessage.setText("Прости,я не всегда понимаю контекст");
   } else if(r < 0.685) {
    chatBotMessage.setText("А ты не очень тупой чел.");
   } else if(r < 0.690) {
@@ -2436,7 +2411,7 @@ SpeechBot.prototype.getResponse = function(message) {
   } else if(r < 0.750) {
    chatBotMessage.setText("Ой, повтори, я не расслышала!");
   } else if(r < 0.760) {
-   chatBotMessage.setText("Мне приходится общаться с несколькими людьми одновременно, поэтому я иногда путаюсь.");
+   chatBotMessage.setText("Прости,запросы со сложным смыслом не всегда мне понятны,попробуй сказать проще.");
 //   chatBotMessage.setText("Я тебя люблю!");
   } else if(r < 0.761) {
    chatBotMessage.setText("А ты забавный...");

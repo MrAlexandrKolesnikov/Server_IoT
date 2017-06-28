@@ -6,7 +6,8 @@
 var CreateTxtFileByName = require("./WorkWithFile.js").CreateTxtFileByName; //func for worck with txt file
 var WriteTxtFile = require("./WorkWithFile.js").WriteTxtFile; //func for write text in txt file
 var CheckDevice = require("./CheckDevice.js").checkDevice; //func for check divice and cmd
-var SetDeviceStatus = require("../device/wifiPower.js").setStatus;
+var NumberOfDevice = require("../device/list_wifiPower.js").getNumberOfDevice;
+var setDeviceStatus = require("../device/list_wifiPower.js").setStatus;
 //var mysql = require('mysql'); //for mysql database
 //var PythonShell = require('python-shell'); //for run python shell
 
@@ -410,26 +411,31 @@ exports.getcmd = function( cmd , device)
     if( !findcmd )
         ledOn.forEach( function ( item )
         {
-            findIndex = cmd.indexOf( item );
-
-            if( findIndex != -1 )
-            {
-                SetDeviceStatus(1);
-                lastMessage = "answer:"+answerOk[ Random( 0 , 3 ) ];
-                findcmd = lastMessage;
+            if(cmd.indexOf(item) != -1) {
+                if (NumberOfDevice() != 0) {
+                        setDeviceStatus(0, 1);
+                        lastMessage = "answer:" + answerOk[Random(0, 3)];
+                        findcmd = lastMessage;
+                }
+                else {
+                    findcmd = "answer:Извините,ни одного усройства не подключено к серверу";
+                }
             }
         });
 
     if( !findcmd )
         ledOff.forEach( function ( item )
         {
-            findIndex = cmd.indexOf( item );
-
-            if( findIndex != -1 )
+            if(cmd.indexOf(item) != -1)
             {
-                SetDeviceStatus(0);
-                lastMessage = "answer:"+answerOk[ Random( 0 , 3 ) ];
-                findcmd = lastMessage;
+                if (NumberOfDevice() != 0) {
+                        setDeviceStatus(0, 0);
+                        lastMessage = "answer:" + answerOk[Random(0, 3)];
+                        findcmd = lastMessage;
+                }
+                else {
+                    findcmd = "answer:Извините,ни одного усройства не подключено к серверу";
+                }
             }
         });
 

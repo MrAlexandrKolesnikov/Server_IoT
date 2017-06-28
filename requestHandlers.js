@@ -97,6 +97,19 @@ function index( response , postDate)
     })
 }
 
+function start_page( response , postDate)
+{
+    console.log(postDate);
+//        now.setTimezone( 'UTC' );
+    fs = require( 'fs' );
+    fs.readFile('./index/start_page.html', function ( err , info )
+    {
+        if ( err ) throw err;
+        response.write( info );
+        response.end();
+    })
+}
+
 function remote(response , postDate)
 {
     console.log(postDate);
@@ -179,5 +192,6 @@ exports.error = error;
 exports.temperatura = temperatura;
 exports.friday = friday;
 exports.remote = remote;
+exports.start_page = start_page;
 
 exports.soket = soket;
